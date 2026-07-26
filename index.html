@@ -101,6 +101,7 @@
   .score-block { background: var(--paper); border: 1px solid rgba(137,126,106,0.22); padding: 1.3rem 0.8rem; text-align: center; }
   .score-num { font-size: 2.6rem; font-weight: bold; color: var(--ink); font-style: italic; line-height: 1; }
   .score-num.red { color: var(--brick); }
+  .score-num.red { font-size: 1.5rem; font-style: italic; line-height: 1.15; }
   .score-den { font-size: 1.1rem; color: var(--fade); font-weight: normal; }
   .score-label { font-size: 0.66rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--fade); margin-top: 0.5rem; font-weight: bold; }
   .grade-desc { text-align: center; font-style: italic; margin-bottom: 1.6rem; padding: 0 0.5rem; line-height: 1.6; }
@@ -165,7 +166,7 @@
     <div class="score-row">
       <div class="score-block"><div class="score-num"><span id="r-correct">0</span><span class="score-den">/<span id="r-total">0</span></span></div><div class="score-label">Argument moves</div></div>
       <div class="score-block"><div class="score-num"><span id="r-pct">0</span><span class="score-den">%</span></div><div class="score-label">Accuracy</div></div>
-      <div class="score-block"><div class="score-num red" id="r-band">-</div><div class="score-label">Standard</div></div>
+      <div class="score-block"><div class="score-num red" id="r-band">-</div><div class="score-label">Verdict</div></div>
     </div>
     <div class="grade-desc" id="r-desc"></div>
     <div class="breakdown"><div class="breakdown-label">By essay skill</div><div id="r-breakdown"></div></div>
@@ -454,11 +455,11 @@ function showResults(){
   assessedIds.forEach(i=>{ if(state.answers[i]===FLOW[i].correct) correct++; });
   const pct=totalQ?Math.round((correct/totalQ)*100):0;
   let band="-",desc="";
-  if(pct>=85){band="7";desc="Excellent. You argued that a war can be lost at home, and weighed that against the collapse in Vietnam.";}
-  else if(pct>=70){band="6";desc="Strong. Your argument holds both battlefields at once. Keep making the home front an explicit cause.";}
-  else if(pct>=55){band="5";desc="Good foundation. You have both piles. Focus next on judging how the home front forced the exit.";}
-  else if(pct>=40){band="4";desc="Getting there. Watch the pull to say 'the North just won'. The marks are in weighing home against ground.";}
-  else {band="3";desc="Rebuild from the two fronts, the war in Vietnam and the war at home, then retry.";}
+  if(pct>=85){band="Excellent";desc="Excellent. You argued that a war can be lost at home, and weighed that against the collapse in Vietnam.";}
+  else if(pct>=70){band="Strong";desc="Strong. Your argument holds both battlefields at once. Keep making the home front an explicit cause.";}
+  else if(pct>=55){band="Solid";desc="Good foundation. You have both piles. Focus next on judging how the home front forced the exit.";}
+  else if(pct>=40){band="Patchy";desc="Getting there. Watch the pull to say 'the North just won'. The marks are in weighing home against ground.";}
+  else {band="Start again";desc="Rebuild from the two fronts, the war in Vietnam and the war at home, then retry.";}
   document.getElementById("r-correct").textContent=correct;
   document.getElementById("r-total").textContent=totalQ;
   document.getElementById("r-pct").textContent=pct;
