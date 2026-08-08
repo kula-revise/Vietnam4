@@ -926,7 +926,7 @@ function renderRunsum(item){
 function showBuildPop(part){
   const back=document.createElement("div");
   back.className="pop-back";
-  back.innerHTML=`<div class="pop"><div class="pop-label">Added</div><div class="pop-text">${esc(part)}</div><button class="pop-btn" id="pop-ok">Got it</button></div>`;
+  back.innerHTML=`<div class="pop"><div class="pop-label">The line this lesson gives you</div><div class="pop-text">${esc(part)}</div><div class="pop-note" style="margin-top:.7rem;font-size:.88rem;opacity:.72;line-height:1.5;">Write this line down. You will use it in Lesson 5, where you build the whole answer.</div><button class="pop-btn" id="pop-ok">Got it</button></div>`;
   document.body.appendChild(back);
   document.getElementById("pop-ok").addEventListener("click",()=>back.remove());
 }
@@ -1057,7 +1057,7 @@ function showResults(){
     const back=document.createElement("div");
     back.className="pop-back";
     const D = RESULTS.done||{};
-    back.innerHTML=`<div class="pop"><div class="pop-label">${esc(D.label||"Lesson 4 complete")}</div>${D.title?`<h3 style="margin:.4rem 0 .2rem;font-size:1.05rem;">${esc(D.title)}</h3>`:""}<div class="pop-text">${esc(D.text||"Tap Done to continue.")}</div><button class="pop-btn" id="fin-ok">Got it</button></div>`;
+    back.innerHTML=`<div class="pop"><div class="pop-label">${esc(D.label||"Lesson 4 complete")}</div>${D.title?`<h3 style="margin:.4rem 0 .2rem;font-size:1.05rem;">${esc(D.title)}</h3>`:""}<div class="pop-text">${esc(D.text||"Tap Done to continue.")}</div><button class="pop-btn" id="fin-ok">Done</button></div>`;
     document.body.appendChild(back);
     document.getElementById("fin-ok").addEventListener("click",()=>back.remove());
   });
