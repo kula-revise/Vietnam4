@@ -251,9 +251,7 @@ body.dark .btn-primary .sa, body.dark #next-btn .sa, body.dark .btn-primary svg,
 </style>
 </head>
 <body>
-<style>#kula-mode-toggle{position:fixed;bottom:1.1rem;right:1.1rem;z-index:9999;display:inline-flex;align-items:center;gap:.45em;padding:.48rem .82rem;border-radius:999px;font-family:var(--sans);font-size:.7rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;cursor:pointer;-webkit-tap-highlight-color:transparent;line-height:1;background:#F4F6F8;color:#525C66;border:1px solid rgba(23,33,43,.15);box-shadow:0 2px 8px rgba(0,0,0,.10);transition:transform .15s ease,box-shadow .15s ease}#kula-mode-toggle:hover{transform:translateY(-1px)}#kula-mode-toggle svg{width:15px;height:15px;display:block;flex:0 0 auto}body.dark #kula-mode-toggle{background:#1B2026;color:#AEB8C4;border-color:rgba(220,232,244,.18)}.term{border-bottom:1px dashed var(--a2,currentColor);cursor:pointer;}
-#term-pop{position:fixed;z-index:80;max-width:15rem;background:var(--ink,#1a1a1a);color:var(--paper,#fff);padding:0.55rem 0.7rem;border-radius:5px;font-size:0.82rem;line-height:1.45;box-shadow:0 4px 16px rgba(0,0,0,0.28);display:none;}
-.essaynote{background:rgba(var(--a2-rgb),0.07);border:1px solid rgba(var(--a2-rgb),0.28);border-left:4px solid var(--a2);border-radius:7px;padding:1rem 1.15rem 1.05rem;}
+<style>#kula-mode-toggle{position:fixed;bottom:1.1rem;right:1.1rem;z-index:9999;display:inline-flex;align-items:center;gap:.45em;padding:.48rem .82rem;border-radius:999px;font-family:var(--sans);font-size:.7rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;cursor:pointer;-webkit-tap-highlight-color:transparent;line-height:1;background:#F4F6F8;color:#525C66;border:1px solid rgba(23,33,43,.15);box-shadow:0 2px 8px rgba(0,0,0,.10);transition:transform .15s ease,box-shadow .15s ease}#kula-mode-toggle:hover{transform:translateY(-1px)}#kula-mode-toggle svg{width:15px;height:15px;display:block;flex:0 0 auto}body.dark #kula-mode-toggle{background:#1B2026;color:#AEB8C4;border-color:rgba(220,232,244,.18)}.essaynote{background:color-mix(in srgb, var(--a2) 8%, transparent);border:1px solid color-mix(in srgb, var(--a2) 32%, transparent);border-left:4px solid var(--a2);border-radius:7px;padding:1rem 1.15rem 1.05rem;}
 .essaynote-label{font-size:0.64rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--a2);font-weight:700;margin-bottom:0.5rem;}
 .essaynote h2{margin:0 0 0.5rem;}
 .essaynote p:last-child{margin-bottom:0;}
@@ -348,7 +346,7 @@ const FLOW = [
   {
     "type": "content",
     "tag": "The turn",
-    "html": "<h2>A word for leaving</h2><p>You just watched something be announced as over while it carried on, and you worked out what a promise is actually worth. Both of those happened in Vietnam, and the first one has a name.</p><p>In 1969 Nixon announced <strong><span class=\"term\" data-def=\"Handing the fighting to the South Vietnamese army so American troops could leave.\">Vietnamisation</span></strong>. American troops would withdraw in stages while the South Vietnamese army took over the fighting. American money, equipment and training would keep flowing.</p><p>Notice what the policy does. It ends American involvement without anybody having to say America lost. That is the claim. The rest of this lesson is the reality.</p>",
+    "html": "<h2>A word for leaving</h2><p>You just watched something be announced as over while it carried on, and you worked out what a promise is actually worth. Both of those happened in Vietnam, and the first one has a name.</p><p>In 1969 Nixon announced <strong>Vietnamisation</strong>. American troops would withdraw in stages while the South Vietnamese army took over the fighting. American money, equipment and training would keep flowing.</p><p>Notice what the policy does. It ends American involvement without anybody having to say America lost. That is the claim. The rest of this lesson is the reality.</p>",
     "terms": [
       {
         "term": "Vietnamisation",
@@ -360,7 +358,7 @@ const FLOW = [
       },
       {
         "term": "Ceasefire",
-        "def": "An agreement to stop fighting. A <span class=\"term\" data-def=\"An agreement to stop fighting.\">ceasefire</span> holds only as long as both sides expect to gain more by keeping it than by breaking it."
+        "def": "An agreement to stop fighting. A ceasefire holds only as long as both sides expect to gain more by keeping it than by breaking it."
       }
     ],
     "remember": "Vietnamisation was a way of leaving that did not look like leaving."
@@ -1080,6 +1078,5 @@ function isRight(i){
 renderCover();
 })();
 </script>
-<script>(function(){var pop=document.createElement("div");pop.id="term-pop";document.body.appendChild(pop);document.addEventListener("click",function(e){var t=e.target.closest?e.target.closest(".term"):null;if(t){pop.textContent=t.getAttribute("data-def");pop.style.display="block";var r=t.getBoundingClientRect();var w=pop.offsetWidth||240;pop.style.left=Math.max(8,Math.min(r.left,window.innerWidth-w-8))+"px";pop.style.top=(r.bottom+6)+"px";e.stopPropagation();}else{pop.style.display="none";}});})();</script>
 </body>
 </html>
