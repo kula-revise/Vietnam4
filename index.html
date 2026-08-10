@@ -251,7 +251,13 @@ body.dark .btn-primary .sa, body.dark #next-btn .sa, body.dark .btn-primary svg,
 </style>
 </head>
 <body>
-<style>#kula-mode-toggle{position:fixed;bottom:1.1rem;right:1.1rem;z-index:9999;display:inline-flex;align-items:center;gap:.45em;padding:.48rem .82rem;border-radius:999px;font-family:var(--sans);font-size:.7rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;cursor:pointer;-webkit-tap-highlight-color:transparent;line-height:1;background:#F4F6F8;color:#525C66;border:1px solid rgba(23,33,43,.15);box-shadow:0 2px 8px rgba(0,0,0,.10);transition:transform .15s ease,box-shadow .15s ease}#kula-mode-toggle:hover{transform:translateY(-1px)}#kula-mode-toggle svg{width:15px;height:15px;display:block;flex:0 0 auto}body.dark #kula-mode-toggle{background:#1B2026;color:#AEB8C4;border-color:rgba(220,232,244,.18)}</style><button id="kula-mode-toggle" type="button" onclick="kulaToggle()" aria-label="Switch between light and dark mode"><span id="kmt-icon"></span><span id="kmt-label"></span></button><script>(function(){var MOON="<svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z'/></svg>",SUN="<svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='4.2'/><path d='M12 1.6v2M12 20.4v2M3.6 12h-2M22.4 12h-2M5.6 5.6 4.2 4.2M19.8 19.8l-1.4-1.4M18.4 5.6l1.4-1.4M4.2 19.8l1.4-1.4'/></svg>",K="kula-theme";function paint(){var d=document.body.classList.contains("dark");var ic=document.getElementById("kmt-icon"),la=document.getElementById("kmt-label");if(ic)ic.innerHTML=d?SUN:MOON;if(la)la.textContent=d?"Light mode":"Dark mode"}window.kulaToggle=function(){document.body.classList.toggle("dark");try{localStorage.setItem(K,document.body.classList.contains("dark")?"dark":"light")}catch(e){}paint()};try{if(localStorage.getItem(K)!=="light")document.body.classList.add("dark")}catch(e){document.body.classList.add("dark")}paint();})();</script>
+<style>#kula-mode-toggle{position:fixed;bottom:1.1rem;right:1.1rem;z-index:9999;display:inline-flex;align-items:center;gap:.45em;padding:.48rem .82rem;border-radius:999px;font-family:var(--sans);font-size:.7rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;cursor:pointer;-webkit-tap-highlight-color:transparent;line-height:1;background:#F4F6F8;color:#525C66;border:1px solid rgba(23,33,43,.15);box-shadow:0 2px 8px rgba(0,0,0,.10);transition:transform .15s ease,box-shadow .15s ease}#kula-mode-toggle:hover{transform:translateY(-1px)}#kula-mode-toggle svg{width:15px;height:15px;display:block;flex:0 0 auto}body.dark #kula-mode-toggle{background:#1B2026;color:#AEB8C4;border-color:rgba(220,232,244,.18)}.term{border-bottom:1px dashed var(--a2,currentColor);cursor:pointer;}
+#term-pop{position:fixed;z-index:80;max-width:15rem;background:var(--ink,#1a1a1a);color:var(--paper,#fff);padding:0.55rem 0.7rem;border-radius:5px;font-size:0.82rem;line-height:1.45;box-shadow:0 4px 16px rgba(0,0,0,0.28);display:none;}
+.essaynote{background:rgba(var(--a2-rgb),0.07);border:1px solid rgba(var(--a2-rgb),0.28);border-left:4px solid var(--a2);border-radius:7px;padding:1rem 1.15rem 1.05rem;}
+.essaynote-label{font-size:0.64rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--a2);font-weight:700;margin-bottom:0.5rem;}
+.essaynote h2{margin:0 0 0.5rem;}
+.essaynote p:last-child{margin-bottom:0;}
+</style><button id="kula-mode-toggle" type="button" onclick="kulaToggle()" aria-label="Switch between light and dark mode"><span id="kmt-icon"></span><span id="kmt-label"></span></button><script>(function(){var MOON="<svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z'/></svg>",SUN="<svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='4.2'/><path d='M12 1.6v2M12 20.4v2M3.6 12h-2M22.4 12h-2M5.6 5.6 4.2 4.2M19.8 19.8l-1.4-1.4M18.4 5.6l1.4-1.4M4.2 19.8l1.4-1.4'/></svg>",K="kula-theme";function paint(){var d=document.body.classList.contains("dark");var ic=document.getElementById("kmt-icon"),la=document.getElementById("kmt-label");if(ic)ic.innerHTML=d?SUN:MOON;if(la)la.textContent=d?"Light mode":"Dark mode"}window.kulaToggle=function(){document.body.classList.toggle("dark");try{localStorage.setItem(K,document.body.classList.contains("dark")?"dark":"light")}catch(e){}paint()};try{if(localStorage.getItem(K)!=="light")document.body.classList.add("dark")}catch(e){document.body.classList.add("dark")}paint();})();</script>
 <div class="container">
   <div class="top-bar hidden" id="top-bar">
     <div class="top-meta"><span id="lesson-tag">Kula Revise &middot; Grade 12 &middot; Vietnam</span><span class="top-count" id="step-count"></span></div>
@@ -337,12 +343,12 @@ const FLOW = [
       "Whether anyone else was there to hear them say it aloud"
     ],
     "correct": 0,
-    "explanation": "Option {opt0} is the hard-headed answer and it's the right one. Option {opt2} is tempting because paper feels solid, but paper only helps if somebody will enforce it. Watch what happens to a written promise at the end of this lesson, and you will see why."
+    "explanation": "Option {opt0} is the realistic answer and it's the right one. Option {opt2} is tempting because paper feels solid, but paper only helps if somebody will enforce it. Watch what happens to a written promise at the end of this lesson, and you will see why."
   },
   {
     "type": "content",
     "tag": "The turn",
-    "html": "<h2>A word for leaving</h2><p>You just watched something be announced as over while it carried on, and you worked out what a promise is actually worth. Both of those happened in Vietnam, and the first one has a name.</p><p>In 1969 Nixon announced <strong>Vietnamisation</strong>. American troops would withdraw in stages while the South Vietnamese army took over the fighting. American money, equipment and training would keep flowing.</p><p>Notice what the policy does. It ends American involvement without anybody having to say America lost. That is the claim. The rest of this lesson is the reality.</p>",
+    "html": "<h2>A word for leaving</h2><p>You just watched something be announced as over while it carried on, and you worked out what a promise is actually worth. Both of those happened in Vietnam, and the first one has a name.</p><p>In 1969 Nixon announced <strong><span class=\"term\" data-def=\"Handing the fighting to the South Vietnamese army so American troops could leave.\">Vietnamisation</span></strong>. American troops would withdraw in stages while the South Vietnamese army took over the fighting. American money, equipment and training would keep flowing.</p><p>Notice what the policy does. It ends American involvement without anybody having to say America lost. That is the claim. The rest of this lesson is the reality.</p>",
     "terms": [
       {
         "term": "Vietnamisation",
@@ -354,7 +360,7 @@ const FLOW = [
       },
       {
         "term": "Ceasefire",
-        "def": "An agreement to stop fighting. A ceasefire holds only as long as both sides expect to gain more by keeping it than by breaking it."
+        "def": "An agreement to stop fighting. A <span class=\"term\" data-def=\"An agreement to stop fighting.\">ceasefire</span> holds only as long as both sides expect to gain more by keeping it than by breaking it."
       }
     ],
     "remember": "Vietnamisation was a way of leaving that did not look like leaving."
@@ -382,7 +388,7 @@ const FLOW = [
       "By 1973 their army was one of the largest in the world on paper"
     ],
     "correct": 0,
-    "explanation": "Option {opt0} names the burden the policy transferred, which is what the question asks about. Option {opt3} is tempting because the number sounds like strength. But an army can be large on paper and still be short of fuel, spare parts and air cover. Ask what a policy required of people, not what it looked like on a chart in front of you."
+    "explanation": "Option {opt0} names the load the policy passed on, which is what the question asks about. Option {opt3} is tempting because the number sounds like strength. But an army can be large on paper and still be short of fuel, spare parts and air cover. Ask what a policy required of people, not what it looked like on a chart in front of you."
   },
   {
     "type": "source",
@@ -448,7 +454,7 @@ const FLOW = [
       "The bombing was widened because the South Vietnamese army needed time to become ready"
     ],
     "correct": 0,
-    "explanation": "Option {opt0} puts the two facts side by side and says what the pair shows. Option {opt1} is tempting because it's true and it's the sharpest single fact here. But one fact on its own can't show a contradiction, and the contradiction is the point. Option {opt3} borrows Nixon's reasoning instead of examining it, which is not what you are being asked to do."
+    "explanation": "Option {opt0} puts the two facts side by side and says what the pair shows. Option {opt1} is tempting because it's true and it's the sharpest single fact here. But one fact on its own can't show a contradiction, and the contradiction is the point. Option {opt3} borrows Nixon's reasoning instead of testing it, which is not what you are being asked to do."
   },
   {
     "type": "content",
@@ -562,7 +568,7 @@ const FLOW = [
       "Neither, because the war was decided entirely by the Soviet Union and China supplying the north"
     ],
     "correct": 0,
-    "explanation": "Option {opt0} separates two different ways of losing, which is what this question is really asking. Option {opt1} is tempting because the other side did win in the end. But American units generally held the ground they fought for, including through Tet. What gave way was the willingness at home to keep paying, and that is the distinction you need."
+    "explanation": "Option {opt0} separates two different ways of losing, which is what this question is really asking. Option {opt1} is tempting because the other side did win in the end. But American units generally held the ground they fought for, including through Tet. What gave way was the willingness at home to keep paying, and that is the difference you need."
   },
   {
     "type": "carousel",
@@ -603,17 +609,11 @@ const FLOW = [
       "Vietnamisation would have worked if Congress had kept its promises, so the policy itself was sound enough"
     ],
     "correct": 0,
-    "explanation": "Option {opt0} names what the policy was for and then says whether it did it. Option {opt1} is tempting because those three dates are exactly the ones you'd revise. But dates in a row don't say what any of it was for. Option {opt2} defends the policy and abandons the line you have built across four lessons."
-  },
-  {
-    "type": "runsum",
-    "tag": "Your running summary",
-    "heading": "Four sentences. That is the whole argument."
+    "explanation": "Option {opt0} names what the policy was for and then says whether it did it. Option {opt1} is tempting because those three dates are exactly the ones you'd revise. But dates in a row don't say what any of it was for. Option {opt2} defends the policy and drops the line you have built across four lessons."
   },
   {
     "type": "content",
-    "tag": "Beyond the exam",
-    "html": "<h2>The promise that depended on still being needed</h2><p>South Vietnam signed a peace on the strength of a promise: if the North attacked, American aid and American aircraft would come back. They didn't.</p><p>Nothing was broken in a courtroom sense. The men who made the promise had left office, the money was voted down, and the country that made it had stopped caring about the outcome.</p><p>The habit worth taking from this is small and useful. When somebody promises you something for later, ask what it will cost them on the day it falls due, and whether they will still need you then.</p>"
+    "tag": "", "html": "<div class=\"essaynote\"><div class=\"essaynote-label\">For an essay</div><h2>Remember this</h2><p>Vietnamisation was a way of leaving, not a way of winning. By 1975 the Viet Cong's slow, wearing tactics had won what no single battle ever did.</p><p>That is the point you will use when you build an essay.</p></div>"
   }
 ];
 
@@ -1036,7 +1036,7 @@ function showResults(){
     return `<div class="bd-row"><div class="bd-name">${sp}</div><div class="bd-bar"><div class="bd-fill" style="width:${p}%"></div></div><div class="bd-score">${g}/${ids.length}</div></div>`;
   }).join("");
   const parts=buildIds.filter(i=>state.revealed[i]).map(i=>FLOW[i].part);
-  const runsum = parts.length?`<div class="breakdown"><div class="breakdown-label">Your running summary</div><ol style="margin:0;padding-left:1.3rem;">${parts.map(p=>`<li style="font-size:0.98rem;line-height:1.62;margin-bottom:0.6rem;">${esc(p)}</li>`).join("")}</ol></div>`:"";
+  const runsum = "";
   stage.innerHTML = `
     <div class="results-head">
       <div class="results-eyebrow">${RESULTS.eyebrow||"Lesson report"}</div>
@@ -1080,5 +1080,6 @@ function isRight(i){
 renderCover();
 })();
 </script>
+<script>(function(){var pop=document.createElement("div");pop.id="term-pop";document.body.appendChild(pop);document.addEventListener("click",function(e){var t=e.target.closest?e.target.closest(".term"):null;if(t){pop.textContent=t.getAttribute("data-def");pop.style.display="block";var r=t.getBoundingClientRect();var w=pop.offsetWidth||240;pop.style.left=Math.max(8,Math.min(r.left,window.innerWidth-w-8))+"px";pop.style.top=(r.bottom+6)+"px";e.stopPropagation();}else{pop.style.display="none";}});})();</script>
 </body>
 </html>
