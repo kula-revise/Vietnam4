@@ -18,34 +18,8 @@
      tints and shadows track the accents. One face for facts (serif),
      one for structure (sans). See README for how to design a new skin.
      ============================================================ */
-  :root {
-    /* grounds and ink */
-    --sand: #EFE9DC;   /* page background */
-    --paper: #FAF6EC;  /* cards */
-    --cut: #FFFDF6;    /* insets, sources, carousels */
-    --ink: #23302E;    /* body text */
-    --clay: #5F6B52;   /* stage tags, quiet labels */
-    --fade: #7C7B6D;   /* muted text, captions */
-    /* the two accents: Vietnam identity, sage and teal */
-    --a1: #6E7F5C;   --a1-rgb: 110,127,92;   /* accent one, sage */
-    --a2: #1E6A6B;   --a2-rgb: 30,106,107;   /* accent two, teal */
-    --ink-c:27,42,51; --fade-c:123,114,99;
-    --opt-correct-bg:#E2EDE4; --opt-wrong-bg:#F2DDD3; --chip-argue-bg:#E7D6C4; --chip-argue-fg:#7B3F1C;
-    --on-ink:#F4EADA; --mute1:#4a463f; --mute2:#55504a; --ink-hover:#12202a;
-    --chip-instinct-bg:#EADFC9; --sort-bg:rgba(255,255,255,0.4); --a2-hover:#164C3F;
-    /* type: one face for facts, one for structure */
-    --serif: Georgia, 'Times New Roman', serif;
-    --sans: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  }
-  body.dark {
-    --sand:#12150F; --paper:#191D14; --cut:#20261A; --ink:#ECEBDB;
-    --a1:#94A878; --a2:#45A9AA; --clay:#94A878; --fade:#8E8D7A;
-    --a1-rgb:148,168,120; --a2-rgb:69,169,170;
-    --ink-c:236,235,219; --fade-c:142,141,122;
-    --opt-correct-bg:#17352A; --opt-wrong-bg:#2E2420; --chip-argue-bg:#262019; --chip-argue-fg:#C9A97F;
-    --on-ink:#12150F; --mute1:#B0AE98; --mute2:#A9A791; --ink-hover:#E4E3D2;
-    --chip-instinct-bg:#201E16; --sort-bg:rgba(255,255,255,0.05); --a2-hover:#3A9091;
-  }
+  :root{--sand:#12150F;--paper:#191D14;--cut:#20261A;--ink:#ECEBDB;--clay:#94A878;--fade:#8E8D7A;--a1:#94A878;--a1-rgb:148,168,120;--a2:#45A9AA;--a2-rgb:69,169,170;--ink-c:236,235,219;--fade-c:142,141,122;--opt-correct-bg:#17352A;--opt-wrong-bg:#2E2420;--chip-argue-bg:#262019;--chip-argue-fg:#C9A97F;--on-ink:#12150F;--mute1:#B0AE98;--mute2:#A9A791;--ink-hover:#E4E3D2;--chip-instinct-bg:#201E16;--sort-bg:rgba(255,255,255,0.05);--a2-hover:#3A9091;--serif:Georgia, 'Times New Roman', serif;--sans:system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;}
+  body.bright{--sand:#EFE9DC;--paper:#FAF6EC;--cut:#FFFDF6;--ink:#23302E;--clay:#5F6B52;--fade:#7C7B6D;--a1:#6E7F5C;--a1-rgb:110,127,92;--a2:#1E6A6B;--a2-rgb:30,106,107;--ink-c:27,42,51;--fade-c:123,114,99;--opt-correct-bg:#E2EDE4;--opt-wrong-bg:#F2DDD3;--chip-argue-bg:#E7D6C4;--chip-argue-fg:#7B3F1C;--on-ink:#F4EADA;--mute1:#4a463f;--mute2:#55504a;--ink-hover:#12202a;--chip-instinct-bg:#EADFC9;--sort-bg:rgba(255,255,255,0.4);--a2-hover:#164C3F;}
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
     min-height: 100vh;
@@ -246,16 +220,18 @@
 #kula-mode-toggle, .mode-toggle { min-height: 44px !important; padding-top: 0.6rem !important; padding-bottom: 0.6rem !important; box-sizing: border-box !important; }
 #next-btn, #begin-btn, #kdone-btn, #kretake-btn { min-height: 44px !important; }
 /* vt-cta */
-body.dark .btn-primary, body.dark #next-btn { color: #12150f !important; }
-body.dark .btn-primary .sa, body.dark #next-btn .sa, body.dark .btn-primary svg, body.dark #next-btn svg { color: #12150f !important; fill: #12150f !important; }
+body:not(.bright) .btn-primary, body:not(.bright) #next-btn { color: #12150f !important; }
+body:not(.bright) .btn-primary .sa, body:not(.bright) #next-btn .sa, body:not(.bright) .btn-primary svg, body:not(.bright) #next-btn svg { color: #12150f !important; fill: #12150f !important; }
 </style>
 </head>
 <body>
-<style>#kula-mode-toggle{position:fixed;bottom:1.1rem;right:1.1rem;z-index:9999;display:inline-flex;align-items:center;gap:.45em;padding:.48rem .82rem;border-radius:999px;font-family:var(--sans);font-size:.7rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;cursor:pointer;-webkit-tap-highlight-color:transparent;line-height:1;background:#F4F6F8;color:#525C66;border:1px solid rgba(23,33,43,.15);box-shadow:0 2px 8px rgba(0,0,0,.10);transition:transform .15s ease,box-shadow .15s ease}#kula-mode-toggle:hover{transform:translateY(-1px)}#kula-mode-toggle svg{width:15px;height:15px;display:block;flex:0 0 auto}body.dark #kula-mode-toggle{background:#1B2026;color:#AEB8C4;border-color:rgba(220,232,244,.18)}.essaynote{background:color-mix(in srgb, var(--a2) 8%, transparent);border:1px solid color-mix(in srgb, var(--a2) 32%, transparent);border-left:4px solid var(--a2);border-radius:7px;padding:1rem 1.15rem 1.05rem;}
+<script>/* kula: LMS embed events. "completed" fires once, when the learner reaches the closing screen. "advance" fires from the final button. */
+(function(){var sentCompleted=false;window.kulaEmbed=function(ev){if(ev==="completed"){if(sentCompleted)return;sentCompleted=true;}try{window.parent.postMessage({type:"lms-embed-event",version:"1.0",payload:{event:ev}},"*");}catch(e){}};})();</script>
+<style>#kula-mode-toggle{position:fixed;bottom:1.1rem;right:1.1rem;z-index:9999;display:inline-flex;align-items:center;gap:.45em;padding:.48rem .82rem;border-radius:999px;font-family:var(--sans);font-size:.7rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;cursor:pointer;-webkit-tap-highlight-color:transparent;line-height:1;background:#F4F6F8;color:#525C66;border:1px solid rgba(23,33,43,.15);box-shadow:0 2px 8px rgba(0,0,0,.10);transition:transform .15s ease,box-shadow .15s ease}#kula-mode-toggle:hover{transform:translateY(-1px)}#kula-mode-toggle svg{width:15px;height:15px;display:block;flex:0 0 auto}body:not(.bright) #kula-mode-toggle{background:#1B2026;color:#AEB8C4;border-color:rgba(220,232,244,.18)}.essaynote{background:color-mix(in srgb, var(--a2) 8%, transparent);border:1px solid color-mix(in srgb, var(--a2) 32%, transparent);border-left:4px solid var(--a2);border-radius:7px;padding:1rem 1.15rem 1.05rem;}
 .essaynote-label{font-size:0.64rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--a2);font-weight:700;margin-bottom:0.5rem;}
 .essaynote h2{margin:0 0 0.5rem;}
 .essaynote p:last-child{margin-bottom:0;}
-</style><button id="kula-mode-toggle" type="button" onclick="kulaToggle()" aria-label="Switch between light and dark mode"><span id="kmt-icon"></span><span id="kmt-label"></span></button><script>(function(){var MOON="<svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z'/></svg>",SUN="<svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='4.2'/><path d='M12 1.6v2M12 20.4v2M3.6 12h-2M22.4 12h-2M5.6 5.6 4.2 4.2M19.8 19.8l-1.4-1.4M18.4 5.6l1.4-1.4M4.2 19.8l1.4-1.4'/></svg>",K="kula-theme";function paint(){var d=document.body.classList.contains("dark");var ic=document.getElementById("kmt-icon"),la=document.getElementById("kmt-label");if(ic)ic.innerHTML=d?SUN:MOON;if(la)la.textContent=d?"Light mode":"Dark mode"}window.kulaToggle=function(){document.body.classList.toggle("dark");try{localStorage.setItem(K,document.body.classList.contains("dark")?"dark":"light")}catch(e){}paint()};try{if(localStorage.getItem(K)!=="light")document.body.classList.add("dark")}catch(e){document.body.classList.add("dark")}paint();})();</script>
+</style><button id="kula-mode-toggle" type="button" onclick="kulaToggle()" aria-label="Switch between light and dark mode"><span id="kmt-icon"></span><span id="kmt-label"></span></button><script>(function(){var MOON="<svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z'/></svg>",SUN="<svg viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='12' r='4.2'/><path d='M12 1.6v2M12 20.4v2M3.6 12h-2M22.4 12h-2M5.6 5.6 4.2 4.2M19.8 19.8l-1.4-1.4M18.4 5.6l1.4-1.4M4.2 19.8l1.4-1.4'/></svg>",K="kula-mode";function paint(){var d=!document.body.classList.contains("bright");var ic=document.getElementById("kmt-icon"),la=document.getElementById("kmt-label");if(ic)ic.innerHTML=d?SUN:MOON;if(la)la.textContent=d?"Light mode":"Dark mode"}window.kulaToggle=function(){document.body.classList.toggle("bright");try{localStorage.setItem(K,document.body.classList.contains("bright")?"light":"dark")}catch(e){}paint()};try{if(localStorage.getItem(K)==="light")document.body.classList.add("bright")}catch(e){document.body.classList.add("dark")}paint();})();</script>
 <div class="container">
   <div class="top-bar hidden" id="top-bar">
     <div class="top-meta"><span id="lesson-tag">Kula Revise &middot; Grade 12 &middot; Vietnam</span><span class="top-count" id="step-count"></span></div>
@@ -289,15 +265,10 @@ const COVER = {
 const RESULTS = {
   "eyebrow": "Lesson 4 report",
   "title": "Where you stand",
-  "done": {
-    "label": "Lesson 4 complete",
-    "title": "Leaving Without Losing",
-    "text": "Tap Done to continue to Lesson 5, Build the Skeleton."
-  },
   "footer": "Next: Lesson 5, Build the Skeleton. You arrive holding four sentences and turn them into an answer.",
   "bands": {
-    "excellent": "You can hold the claim and the reality apart. You have four sentences now. Go on to Lesson 5.",
-    "strong": "Solid. Run the recap cards once more for the dates, then go on to Lesson 5.",
+    "excellent": "You can hold the claim and the reality apart. You have four sentences now. Continue to Lesson 5.",
+    "strong": "Solid. Run the recap cards once more for the dates, then continue to Lesson 5.",
     "solid": "The shape is there. Reread the Nixon source and the ending screen, then go on.",
     "patchy": "Worth another run before Lesson 5, because Lesson 5 is built out of these four lessons.",
     "start": "This lesson is where the war ends and the argument lands. Take it again from the top."
@@ -328,7 +299,7 @@ const FLOW = [
       "The people who will have to carry on with the fighting"
     ],
     "correct": 0,
-    "explanation": "Option {opt0} is usually the answer, because announcements are made where they are needed. Option {opt1} is tempting because those people have the most at stake, but they already know what is happening. Hold that thought, because you will spend this lesson on the gap between what was said and what was true."
+    "explanation": "Option {opt0} is usually the answer. Announcements are made where they are needed. Option {opt1} tempts you because those people have the most at stake. They already know what is happening. Hold that thought. You will spend this lesson on the gap between what was said and what was true."
   },
   {
     "type": "question",
@@ -341,7 +312,7 @@ const FLOW = [
       "Whether anyone else was there to hear them say it aloud"
     ],
     "correct": 0,
-    "explanation": "Option {opt0} is the realistic answer and it's the right one. Option {opt2} is tempting because paper feels solid, but paper only helps if somebody will enforce it. Watch what happens to a written promise at the end of this lesson, and you will see why."
+    "explanation": "Option {opt0} is the realistic answer, and the right one. Option {opt2} tempts you because paper feels solid. Paper only helps if somebody will enforce it. Watch what happens to a written promise at the end of this lesson."
   },
   {
     "type": "content",
@@ -386,7 +357,7 @@ const FLOW = [
       "By 1973 their army was one of the largest in the world on paper"
     ],
     "correct": 0,
-    "explanation": "Option {opt0} names the load the policy passed on, which is what the question asks about. Option {opt3} is tempting because the number sounds like strength. But an army can be large on paper and still be short of fuel, spare parts and air cover. Ask what a policy required of people, not what it looked like on a chart in front of you."
+    "explanation": "Option {opt0} names the load the policy passed on. That is what the question asks about. Option {opt3} tempts you because the number sounds like strength. An army can be large on paper and still be short of fuel, spare parts and air cover. Ask what a policy required of people, not what it looked like on a chart."
   },
   {
     "type": "source",
@@ -410,7 +381,7 @@ const FLOW = [
       "Nixon was admitting that the United States had been defeated in Vietnam"
     ],
     "correct": 0,
-    "explanation": "Option {opt0} names the swap and says what it achieved, which is what taking a position looks like. Option {opt2} is tempting because it's an exact quotation and quotations feel like evidence. But quoting a source isn't the same as saying what the source is doing. Option {opt3} has it backwards, because Nixon's whole point is that this is not defeat, and you should say so."
+    "explanation": "Option {opt0} names the swap and says what it achieved. That is what taking a position looks like. Option {opt2} tempts you because it is an exact quotation, and quotations feel like evidence. Quoting a source is not the same as saying what the source is doing. Option {opt3} has it backwards. Nixon's whole point is that this is not defeat."
   },
   {
     "type": "content",
@@ -439,7 +410,7 @@ const FLOW = [
       "There is no way to tell, because Nixon never explained what he privately intended by the policy"
     ],
     "correct": 0,
-    "explanation": "Option {opt0} holds both halves at once, which is what weighing means. Option {opt1} is tempting because the training programme really did happen and it was large. But withdrawals were announced in stages timed to American elections, not to conditions in the field. Give the claim its due, then say what actually governed it, and you have weighed the policy."
+    "explanation": "Option {opt0} holds both halves at once. That is what weighing means. Option {opt1} tempts you because the training programme really did happen, and it was large. Withdrawals were announced in stages timed to American elections, not to conditions in the field. Give the claim its due, then say what actually governed it."
   },
   {
     "type": "question",
@@ -452,7 +423,7 @@ const FLOW = [
       "The bombing was widened because the South Vietnamese army needed time to become ready"
     ],
     "correct": 0,
-    "explanation": "Option {opt0} puts the two facts side by side and says what the pair shows. Option {opt1} is tempting because it's true and it's the sharpest single fact here. But one fact on its own can't show a contradiction, and the contradiction is the point. Option {opt3} borrows Nixon's reasoning instead of testing it, which is not what you are being asked to do."
+    "explanation": "Option {opt0} puts the two facts side by side and says what the pair shows. Option {opt1} tempts you because it is true, and it is the sharpest single fact here. One fact on its own cannot show a contradiction, and the contradiction is the point. Option {opt3} borrows Nixon's reasoning instead of testing it."
   },
   {
     "type": "content",
@@ -481,7 +452,7 @@ const FLOW = [
       "Conscription was brought to an end in the United States during 1973"
     ],
     "correct": 0,
-    "explanation": "Option {opt0} is a change to how the country is governed, and that outlasts a mood. Option {opt1} is tempting because Kent State is the moment everyone remembers, and it was a genuine shock. But a shock changes opinion, and a law changes power. Ask yourself whether the change survived the people who felt strongly at the time."
+    "explanation": "Option {opt0} is a change to how the country is governed. That outlasts a mood. Option {opt1} tempts you because Kent State is the moment everyone remembers, and it was a real shock. A shock changes opinion. A law changes power. Ask yourself whether the change survived the people who felt strongly at the time."
   },
   {
     "type": "content",
@@ -540,7 +511,7 @@ const FLOW = [
       2,
       0
     ],
-    "explanation": "The order matters because it shows the withdrawal and the escalation running side by side. Vietnamisation is announced, and five months later the war spreads into Cambodia. Kent State follows within days of that. The heaviest bombing of the whole war comes after the promise to cut air operations, and only then is the peace signed. Saigon falls two years after the last American leaves, and that gap is the point you want."
+    "explanation": "The order matters. It shows the withdrawal and the escalation running side by side. Vietnamisation is announced, and five months later the war spreads into Cambodia. Kent State follows within days. The heaviest bombing of the whole war comes after the promise to cut air operations. Only then is the peace signed. Saigon falls two years after the last American leaves, and that gap is the point you want."
   },
   {
     "type": "question",
@@ -553,7 +524,7 @@ const FLOW = [
       "It cannot be explained, because too many different things were happening in America and Vietnam at once"
     ],
     "correct": 0,
-    "explanation": "Option {opt0} gives the main cause and still admits the other one. Option {opt1} is tempting because the aid really was cut and the timing fits exactly. But an army that ran on foreign fuel, spare parts and air cover had a problem before the money stopped. Name the main cause, then name what was already wrong underneath it, and you have your paragraph."
+    "explanation": "Option {opt0} gives the main cause and still admits the other one. Option {opt1} tempts you because the aid really was cut, and the timing fits exactly. An army that ran on foreign fuel, spare parts and air cover had a problem before the money stopped. Name the main cause, then name what was already wrong underneath it."
   },
   {
     "type": "question",
@@ -566,7 +537,7 @@ const FLOW = [
       "Neither, because the war was decided entirely by the Soviet Union and China supplying the north"
     ],
     "correct": 0,
-    "explanation": "Option {opt0} separates two different ways of losing, which is what this question is really asking. Option {opt1} is tempting because the other side did win in the end. But American units generally held the ground they fought for, including through Tet. What gave way was the willingness at home to keep paying, and that is the difference you need."
+    "explanation": "Option {opt0} separates two different ways of losing. That is what this question is really asking. Option {opt1} tempts you because the other side did win in the end. American units generally held the ground they fought for, including through Tet. What gave way was the willingness at home to keep paying."
   },
   {
     "type": "carousel",
@@ -611,7 +582,8 @@ const FLOW = [
   },
   {
     "type": "content",
-    "tag": "", "html": "<div class=\"essaynote\"><div class=\"essaynote-label\">For an essay</div><h2>Remember this</h2><p>Vietnamisation was a way of leaving, not a way of winning. By 1975 the Viet Cong's slow, wearing tactics had won what no single battle ever did.</p><p>That is the point you will use when you build an essay.</p></div>"
+    "tag": "",
+    "html": "<div class=\"essaynote\"><div class=\"essaynote-label\">For an essay</div><h2>Remember this</h2><p>Vietnamisation was a way of leaving, not a way of winning. By 1975 the Viet Cong's slow, wearing tactics had won what no single battle ever did.</p><p>That is the point you will use when you build an essay.</p></div>"
   }
 ];
 
@@ -918,10 +890,10 @@ function renderRunsum(item){
   const lis = parts.map((p,i)=>`<li class="${i===freshIdx?"fresh":""}">${esc(p)}</li>`).join("");
   stage.innerHTML = `
     <div class="card">
-      <div class="stage-tag">${esc(item.tag||"Your running summary")}</div>
+      <div class="stage-tag">${esc(item.tag||"")}</div>
       ${item.heading?`<h2>${esc(item.heading)}</h2>`:""}
       ${item.html?item.html:""}
-      <div class="runsum"><div class="runsum-label">${esc(item.label||"Your running summary")}</div><ol>${lis}</ol></div>
+      <div class="runsum"><div class="runsum-label">${esc(item.label||"")}</div><ol>${lis}</ol></div>
       ${item.outro?`<p class="runsum-outro">${item.outro}</p>`:""}
     </div>`;
 }
@@ -1008,6 +980,7 @@ function bindToggles(){
 
 // ============ RESULTS ============
 function showResults(){
+  kulaEmbed("completed");
   topBar.classList.add("hidden");
   nav.classList.add("hidden");
   let correct=0;
@@ -1044,21 +1017,14 @@ function showResults(){
     ${runsum}
     <div class="results-actions">
       <button class="btn-secondary" id="restart-btn">Restart lesson</button>
-      <button class="btn-primary" id="finish-btn">Finish &rarr;</button>
+      <button class="btn-primary" id="finish-btn">Continue to Lesson 5&nbsp;&rarr;</button>
     </div>
     ${RESULTS.footer?`<div style="text-align:center;margin-top:1.1rem;font-size:0.92rem;color:var(--fade);">${esc(RESULTS.footer)}</div>`:""}`;
   document.getElementById("restart-btn").addEventListener("click",()=>{
     state.idx=-1; state.answers={}; state.revealed={}; state.order={}; state.carRead={}; state.interState={}; state.poppedBuild={};
     renderCover();
   });
-  document.getElementById("finish-btn").addEventListener("click",()=>{
-    const back=document.createElement("div");
-    back.className="pop-back";
-    const D = RESULTS.done||{};
-    back.innerHTML=`<div class="pop"><div class="pop-label">${esc(D.label||"Lesson 4 complete")}</div>${D.title?`<h3 style="margin:.4rem 0 .2rem;font-size:1.05rem;">${esc(D.title)}</h3>`:""}<div class="pop-text">${esc(D.text||"Tap Done to continue.")}</div><button class="pop-btn" id="fin-ok">Done</button></div>`;
-    document.body.appendChild(back);
-    document.getElementById("fin-ok").addEventListener("click",()=>back.remove());
-  });
+  document.getElementById("finish-btn").onclick=()=>kulaEmbed("advance");
 }
 
 function isRight(i){
